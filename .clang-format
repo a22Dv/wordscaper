@@ -1,0 +1,11 @@
+BasedOnStyle: Google
+DerivePointerAlignment: false
+PointerAlignment: Right
+IndentWidth: 2
+ColumnLimit: 100
+AlignAfterOpenBracket: BlockIndent
+BinPackParameters: false
+AllowShortCaseLabelsOnASingleLine: true
+AlignTrailingComments: 
+    Kind: Always
+    OverEmptyLines: 2
