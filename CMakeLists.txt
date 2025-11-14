@@ -22,7 +22,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Tracy)
 
-file(GLOB SRC_FILES 
+file(GLOB_RECURSE SRC_FILES 
 "${CMAKE_SOURCE_DIR}/src/*.cpp" 
 "${CMAKE_SOURCE_DIR}/app/main.cpp"
 )

@@ -19,10 +19,12 @@ add_custom_target(
   "${CMAKE_BINARY_DIR}/data"
 )
 
+file (GLOB_RECURSE SRC_MAIN "${CMAKE_SOURCE_DIR}/../src/*.cpp")
 file (GLOB TESTS "${CMAKE_SOURCE_DIR}/src/*.cpp")
+
 foreach (tsrc ${TESTS})
   get_filename_component(tname ${tsrc} NAME_WE)
-  add_executable(${tname} ${tsrc})
+  add_executable(${tname} ${tsrc} ${SRC_MAIN})
   target_include_directories(${tname} PRIVATE "${CMAKE_SOURCE_DIR}/../include" ${OpenCV_INCLUDE_DIRS})
   target_link_libraries(${tname} PRIVATE Tracy::TracyClient ${OpenCV_LIBS})
   target_compile_options(${tname} PRIVATE /EHsc)
