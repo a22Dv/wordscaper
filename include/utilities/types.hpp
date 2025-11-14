@@ -22,4 +22,23 @@ using uint64_t = std::uint64_t;
 
 using size_t = std::size_t;
 
+struct Rgba {
+  uint8_t r = {};
+  uint8_t g = {};
+  uint8_t b = {};
+  uint8_t a = {};
+};
+
+struct Point {
+  size_t x = {};
+  size_t y = {};
+};
+
+enum class GameState : uint8_t {
+  MAIN_MENU,
+  LEVEL,
+  UNKNOWN
+};
+
+
 }  // namespace wsr

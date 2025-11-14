@@ -17,13 +17,6 @@
 
 namespace wsr {
 
-struct Rgba {
-  uint8_t r = {};
-  uint8_t g = {};
-  uint8_t b = {};
-  uint8_t a = {};
-};
-
 class Screenshot {
   mutable std::mutex threadMutex_ = {};
   mutable std::atomic<bool> terminate_ = {};
