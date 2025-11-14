@@ -1,0 +1,48 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "wclang-config-debug",
+            "displayName": "Config (WClang) Debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/debug",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang-cl.exe",
+                "CMAKE_CXX_COMPILER": "clang-cl.exe",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_C_FLAGS": "--target=x86_64-pc-windows-msvc",
+                "CMAKE_CXX_FLAGS": "--target=x86_64-pc-windows-msvc",
+                "CMAKE_TOOLCHAIN_FILE": "C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+            "name": "wclang-config-release",
+            "displayName": "Config (WClang) Release",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/release",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang-cl.exe",
+                "CMAKE_CXX_COMPILER": "clang-cl.exe",
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_C_FLAGS": "--target=x86_64-pc-windows-msvc",
+                "CMAKE_CXX_FLAGS": "--target=x86_64-pc-windows-msvc",
+                "CMAKE_TOOLCHAIN_FILE": "C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            }
+        }
+
+    ],
+    "buildPresets": [
+        {
+            "name": "wclang-build-debug",
+            "configurePreset": "wclang-config-debug",
+            "displayName": "Build (WClang) Debug"
+        },
+        {
+            "name": "wclang-build-release",
+            "configurePreset": "wclang-config-release",
+            "displayName": "Build (WClang) Release"
+        }
+    ]
+}
